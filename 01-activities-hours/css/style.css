@@ -103,6 +103,8 @@ p {
 .options-list__option:hover {
   cursor: pointer;
   color: #fafafa;
+  padding: 12px calc(1.5rem + 5px);
+  margin: 0px 5px;
 }
 
 .hours-gallery {
@@ -238,7 +240,12 @@ p {
 .hours-container--synthwave .options-list__option:hover {
   text-shadow: 0px 0px 25px #ffffffc9;
   box-shadow: 0px 4px 19px #fafafa33;
-  border-radius: 10px 10px 10px 0px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.hours-container--synthwave .hours-gallery {
+  animation-duration: 1s;
+  animation-name: fadeIn;
 }
 
 .hours-container--synthwave .options-list__option--active {
@@ -266,6 +273,11 @@ p {
   0%   { background-color: #5847eb52; }
   50%  { background-color: #5847eb73; }
   100% { background-color: #5847eb52; }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 10%; }
+  100% { opacity: 100%; }
 }
 
 @keyframes crawlingWall {
