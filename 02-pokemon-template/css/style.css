@@ -49,6 +49,15 @@ p {
   margin-bottom: 0.3rem;
 }
 
+.side-description__label--vertical {
+  position: absolute;
+  transform: rotate(180deg);
+  bottom: 1rem;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  left: 1rem;
+}
+
 .pokemon-card {
   flex: 4;
   display: flex;
