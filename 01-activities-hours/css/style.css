@@ -22,13 +22,14 @@ p {
   column-gap: 2rem;
 }
 
-.hours-container__right-side {
+.hours-container__left-side {
   flex: 1;
 }
 
-.hours-container__left-side {
+.hours-container__right-side {
   flex: 3;
 }
+
 
 .side-bar {
   flex: 1;
