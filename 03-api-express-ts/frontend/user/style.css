@@ -1,0 +1,239 @@
+.home-page {
+  display: flex;
+  column-gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: calc(100vh - 8rem);
+  padding-bottom: 1rem;
+}
+
+.home-page__left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.user-preview {
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 15px 5px 5px 5px;
+  background-color: #29155459;
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 3px 6px #00000017;
+  display: flex;
+}
+
+.user-avatar {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+button.user-avatar:hover {
+  cursor: pointer;
+}
+
+.user-avatar--big {
+  min-width: 70px;
+  max-width: 70px;
+  height: 70px;
+}
+
+.user-avatar--small {
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+}
+
+.user-avatar__color {
+  width: 100%;
+  height: 100%;
+  background-color: #555ceb;
+  border-radius: 50%;
+  box-shadow: 0px 2px 19px #0000001f;
+}
+
+.user-preview__info {
+  margin: 0.5rem 2rem;
+}
+
+.user-preview__name {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden !important;
+}
+
+.user-preview__email {
+  font-size: .9rem;
+}
+
+.follow-component {
+  flex-grow: 1;
+  max-height: 400px;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 5px 5px 5px 15px;
+  background-color: #29155459;
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 3px 6px #00000017;
+}
+
+.follow-component__title {
+  text-align: center;
+}
+
+.follow-component__users-list {
+  margin-top: 1rem;
+}
+
+.user-item {
+  display: flex;
+  width: 100%;
+}
+
+.user-item__name {
+  margin: 0.5rem 1rem;
+  flex-grow: 1;
+}
+
+.home-page__right-side {
+  flex: 4;
+  display: flex;
+}
+
+.posts-feed {
+  flex-grow: 1;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 5px 15px 15px 5px;
+  background-color: #29155459;
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 3px 6px #00000017;
+  overflow: hidden;
+}
+
+.post {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ffffff3d;
+}
+
+.post:last-of-type {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.post__content {
+  display: flex;
+}
+
+.post__data {
+  margin-left: 1rem;
+}
+
+.post__username {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.open-creator-btn-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.open-creator-btn {
+  border-radius: 0 0 6px 6px;
+  border: none;
+  background-color: #451587;
+  color: #ffffff;
+  padding: 0.4rem 1.2rem;
+  transition: background-color .2s linear;
+}
+
+.open-creator-btn:hover {
+  cursor: pointer;
+  background-color: #8550cf;
+}
+
+.create-post-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d002878;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-post-modal__container {
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #29155459;
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 3px 6px #00000017;
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.create-post-modal__close-btn {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.6rem;
+  border-radius: 0px 5px 0px 5px;
+  transition: text-shadow .2s linear, background-color .2s linear;
+}
+
+.create-post-modal__close-btn:hover {
+  cursor: pointer;
+  text-shadow: 0px 1px 8px #ffffffde;
+  background-color: #d61d3a33;
+}
+
+.create-post-modal__title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.create-post-modal__field {
+  resize: none;
+  outline: none;
+  padding: 0.8rem 0.8rem;
+  border-radius: 5px;
+  background-color: #ffffff26;
+  border: none;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.create-post-modal__button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #a975fa;
+  color: #fafafa;
+  transition: background-color .2s linear;
+}
+
+.create-post-modal__button:hover {
+  cursor: pointer;
+  background-color: #b285fc;
+}

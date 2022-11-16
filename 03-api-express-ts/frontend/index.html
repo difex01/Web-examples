@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/style.css"></link>
+  <script src="./index.js"></script>
+  <title>LogIn</title>
+</head>
+<body>
+  <div id="login-container" class="login-container" style="display: none;">
+    <form class="form">
+      <div class="form__description">
+        Log In into your account
+      </div>
+  
+      <div class="form__input_container">
+        <input id="email" class="form__input" type="email" name="email" placeholder=" ">
+        <label class="form__label" for="email">Email</label>
+      </div>
+  
+      <div class="form__input_container">
+        <input id="password" class="form__input" type="password" name="password" placeholder=" ">
+        <label class="form__label" for="password">Password</label>
+      </div>
+  
+      <button id="submit" class="form__button">Log In</button>
+
+      <div class="form__option-text">or</div>
+      <a class="form__option-link" href="./signup/index.html">Sign Up</a>
+    </form>
+  </div>
+  <div id="loading-cover" class="loading-cover">
+    <i class="loading-cover__icon bi bi-hourglass-split"></i>
+  </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css"></link>
+  <link rel="stylesheet" href="./style.css"></link>
+  <script src="./index.js"></script>
+  <title>Home Page</title>
+</head>
+<body>
+  
+  <div id="principal-layout" class="principal-layout" style="display: none;">
+
+    <div id="header" class="header">
+
+      <div class="header__content">
+        <div class="header__button">
+          <i class="header__icon bi bi-house-door-fill"></i>
+        </div>
+    
+        <div class="header__button">
+          <i class="header__icon bi bi-person-fill"></i>
+        </div>
+    
+        <div class="header__button">
+          <i class="header__icon bi bi-heart-fill"></i>
+        </div>
+    
+        <div class="header__button">
+          <i class="header__icon bi bi-three-dots"></i>
+        </div>
+      </div>
+  
+    </div>
+
+    <div id="home-page" class="home-page">
+
+      <div class="home-page__left-side">
+
+        <div class="user-preview">
+
+          <div class="user-avatar user-avatar--big">
+            <div class="user-avatar__color"></div>
+          </div>
+
+          <div class="user-preview__info">
+            <div class="user-preview__name">
+              User Name
+            </div>
+  
+            <div class="user-preview__email">
+              test@test.com
+            </div>
+          </div>
+
+        </div>
+
+        <div class="follow-component">
+
+          <div class="follow-component__title">
+            Following
+          </div>
+
+          <div class="follow-component__users-list">
+
+            <div class="user-item">
+              <button class="user-avatar user-avatar--small">
+                <div class="user-avatar__color"></div>
+              </button>
+              <div class="user-item__name">
+                User Name
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="home-page__right-side">
+
+        <div class="posts-feed">
+
+          <div class="open-creator-btn-container">
+            <button id="open-creator-btn" class="open-creator-btn">
+              <i class="header__icon bi bi-plus-circle"></i>
+            </button>
+          </div>
+
+          <div class="post">
+
+            <div class="post__content">
+
+              <button class="user-avatar user-avatar--small">
+                <div class="user-avatar__color"></div>
+              </button>
+  
+              <div class="post__data">
+                <div class="post__username">User Name</div>
+                <div class="post__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                  veritatis, dolorum repudiandae dolorem similique dicta sunt
+                  eius ratione corrupti eveniet.
+                </div>
+              </div>
+
+            </div>
+
+            <div class="post__interactions">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      
+    </div>
+
+    <div id="create-post-modal" class="create-post-modal">
+
+      <div class="create-post-modal__container">
+
+        <button id="close-creator-btn" class="create-post-modal__close-btn">
+          <i class="create-post-modal__close-icon bi bi-x-lg"></i>
+        </button>
+
+        <div class="create-post-modal__title">
+          New post
+        </div>
+
+        <textarea id="create-post-field" cols="30" rows="5" class="create-post-modal__field" maxlength="270"></textarea>
+
+        <label for="create-post-field" class="create-post-modal__label"></label>
+
+        <button class="create-post-modal__button">Create</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="loading-cover" class="loading-cover">
+    <i class="loading-cover__icon bi bi-hourglass-split"></i>
+  </div>
+
+</body>
+</html>
