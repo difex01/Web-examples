@@ -12,8 +12,9 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
 
   try {
     const decoded: IUserToken = jwt.verify(token, SECRET as string) as IUserToken;
-    req.body = decoded;
+    req.body.token = decoded;
   } catch (err) {
+    console.error('error decoding token:', err)
     return res.status(401).json({
       message: 'Invalid token',
     });

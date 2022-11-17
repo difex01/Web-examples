@@ -76,9 +76,32 @@ const UserController = {
   },
   auth: async (req: Request, res: Response) => {
     try {
-      const tokenDecoded: IUserToken = req.body;
+      const tokenDecoded: IUserToken = req.body.token;
 
       const user = await User.findById<IUser>(tokenDecoded);
+      if (!user) return res.status(403).json({
+        status: 404,
+        message: 'Wrong token content'
+      });
+
+      res.status(200).json({
+        status: 200,
+      })
+
+    } catch (err) {
+      console.error('Error on User > auth:', err);
+      res.status(500).json({
+        status: 500,
+        message: 'Server error'
+      })
+    }
+  },
+  getUserData: async (req: Request, res: Response) => {
+    try {
+      const tokenDecoded: IUserToken = req.body.token;
+
+      const user = await User.findById<IUser>(tokenDecoded._id);
+      
       if (!user) return res.status(403).json({
         status: 404,
         message: 'Wrong token content'
@@ -97,7 +120,7 @@ const UserController = {
       })
 
     } catch (err) {
-      console.error('Error on User > auth:', err);
+      console.error('Error on User > getUserData:', err);
       res.status(500).json({
         status: 500,
         message: 'Server error'

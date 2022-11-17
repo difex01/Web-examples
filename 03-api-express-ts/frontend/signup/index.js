@@ -22,8 +22,7 @@ function verifyAuth() {
   })
   .then(res => res.json())
   .then(res => {
-    if (res.status != 200) throw new Error(res.message)
-    console.log(res);
+    if (res.status != 200) throw new Error(res.message);
     document.location.href = '../user/index.html';
   })
   .catch(err => {

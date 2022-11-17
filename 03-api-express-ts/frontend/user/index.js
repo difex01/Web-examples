@@ -1,7 +1,7 @@
-const URI = 'http://localhost:3000/api/users/auth';
+const URI = 'http://localhost:3000/api/users/current';
 
 let body, layout, loadingCover, header, postModal, homePage, openCreator,
-closeCreator, postField;
+closeCreator, postField, userPreviewName, userPreviewEmail;
 
 
 function verifyAuth() {
@@ -10,8 +10,7 @@ function verifyAuth() {
   if (!token) return document.location.href = '../index.html';
 
   fetch(URI, {
-    method: 'post',
-    // mode: 'cors',
+    method: 'get',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': token,
@@ -20,8 +19,9 @@ function verifyAuth() {
   .then(res => res.json())
   .then(res => {
     if (res.status != 200) throw new Error(res.message);
-    console.log('res', res);
     layout.style.display = 'block';
+    userPreviewName.innerText = res.user.firstname + ' ' + res.user.lastname;
+    userPreviewEmail.innerText = res.user.email;
     setLoadingStatus(false);
   })
   .catch(err => {
@@ -42,6 +42,8 @@ function init() {
   openCreator = document.getElementById('open-creator-btn');
   closeCreator = document.getElementById('close-creator-btn');
   postField = document.getElementById('create-post-field');
+  userPreviewName = document.getElementById('user-preview__name');
+  userPreviewEmail = document.getElementById('user-preview__email');
 
   setLoadingStatus();
 

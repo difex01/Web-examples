@@ -19,8 +19,7 @@ function verifyAuth() {
   })
   .then(res => res.json())
   .then(res => {
-    console.log(res);
-    if (res.status != 200) throw new Error(res.message)
+    if (res.status != 200) throw new Error(res.message);
     document.location.href = './user/index.html';
   })
   .catch(err => {
@@ -44,7 +43,7 @@ function init() {
     setLoadingStatus();
   };
 
-  submitBtn.addEventListener('click', submitData);
+  submitBtn.addEventListener('click', logIn);
   Array.from(inputs).forEach(input => {
     input.addEventListener('keyup', handleChange);
   })
@@ -58,7 +57,7 @@ function handleChange({ target }) {
   }
 }
 
-function submitData(e) {
+function logIn(e) {
   e.preventDefault();
   setLoadingStatus();
   fetch(URI_LOGIN, {

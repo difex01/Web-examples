@@ -10,6 +10,8 @@ router.get('/', (_req, res) => {
   res.send('all users')
 })
 
+router.get('/current', auth, UserController.getUserData);
+
 router.post('/login', UserController.logIn);
 
 router.post('/signup', UserController.signUp);

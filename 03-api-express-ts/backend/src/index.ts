@@ -11,19 +11,11 @@ database.connect(() => {
 
 const app = express();
 
-// parse requests of content-type - application/x-www-form-urlencoded
-// app.use(express.urlencoded({extended: true}))
-
 // Middleware que transforma la req.body a un json: content-type - application/json
 app.use(express.json())
 app.use(cors());
 
 const PORT = process.env.PORT;
-
-app.get('/ping', (_req, res) => {
-  console.log('ping!');
-  res.send('pong!!!')
-});
 
 app.use('/api/', routes);
 
