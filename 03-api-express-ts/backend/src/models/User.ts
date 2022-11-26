@@ -10,6 +10,7 @@ const UserSchema = new Schema<IUser>({
 }, {
   timestamps: true,
   versionKey: false,
+  collection: 'user',
 });
 
 const User = model('User', UserSchema);
