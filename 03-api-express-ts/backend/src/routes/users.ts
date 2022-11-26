@@ -6,9 +6,7 @@ const UserController = controllers.UserController;
 
 const router = Router();
 
-router.get('/', (_req, res) => {
-  res.send('all users')
-})
+router.get('/', auth, UserController.getAllUsers)
 
 router.get('/current', auth, UserController.getUserData);
 

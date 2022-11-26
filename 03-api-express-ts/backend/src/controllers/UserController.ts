@@ -103,7 +103,7 @@ const UserController = {
       const user = await User.findById<IUser>(tokenDecoded._id);
       
       if (!user) return res.status(403).json({
-        status: 404,
+        status: 403,
         message: 'Wrong token content'
       });
 
@@ -121,6 +121,33 @@ const UserController = {
 
     } catch (err) {
       console.error('Error on User > getUserData:', err);
+      res.status(500).json({
+        status: 500,
+        message: 'Server error'
+      })
+    }
+  },
+  getAllUsers: async (_req: Request, res: Response) => {
+    try {
+      const users = await User.find<IUser>({});
+
+      const cleanUsers = users.map(user => {
+        const {password, ...rest} = user.toObject();
+        return rest
+      });
+      
+      if (!users) return res.status(403).json({
+        status: 403,
+        message: 'Wrong token content'
+      });
+
+      res.status(200).json({
+        status: 200,
+        users: cleanUsers
+      })
+
+    } catch (err) {
+      console.error('Error on User > getAllUsers:', err);
       res.status(500).json({
         status: 500,
         message: 'Server error'

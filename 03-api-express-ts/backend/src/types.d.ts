@@ -1,6 +1,8 @@
+import mongoose from "mongoose";
+
 type Avatar = 'red' | 'blue' | 'green' | 'yellow' | 'pink' | 'purple';
 
-export interface IUser {
+export interface IUser extends mongoose.Document {
   _id: string;
   firstname: string;
   lastname: string;

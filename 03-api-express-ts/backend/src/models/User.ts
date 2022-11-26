@@ -8,7 +8,8 @@ const UserSchema = new Schema<IUser>({
   password: { type: String, trim: true, required: true },
   avatar: { type: String, maxlength: 10, required: true },
 }, {
-  timestamps: true
+  timestamps: true,
+  versionKey: false,
 });
 
 const User = model('User', UserSchema);
