@@ -1,20 +1,24 @@
 import { DataTypes, Model, CreationOptional, InferCreationAttributes } from "sequelize";
 import { sequelize } from '../database/connection';
 
-export class Project extends Model<InferCreationAttributes<Project>> {
-  declare project_id: CreationOptional<number>;
-  declare title: string;
+export class Student extends Model<InferCreationAttributes<Student>> {
+  declare student_id: CreationOptional<number>;
+  declare name: string;
+  declare age: string;
 }
 
-Project.init({
-  project_id: {
+Student.init({
+  student_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  title: {
+  name: {
     type: DataTypes.STRING,
   },
+  age: {
+    type: DataTypes.INTEGER,
+  }
 }, {
   sequelize
 });

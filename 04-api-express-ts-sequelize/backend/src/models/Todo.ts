@@ -2,7 +2,7 @@ import { DataTypes, Model, CreationOptional, InferCreationAttributes } from "seq
 import { sequelize } from '../database/connection';
 
 export class Todo extends Model<InferCreationAttributes<Todo>> {
-  declare id: CreationOptional<number>;
+  declare todo_id: CreationOptional<number>;
   declare title: string;
   declare description: string;
   declare is_completed: CreationOptional<boolean>;
@@ -10,7 +10,7 @@ export class Todo extends Model<InferCreationAttributes<Todo>> {
 }
 
 Todo.init({
-  id: {
+  todo_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
