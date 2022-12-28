@@ -17,27 +17,9 @@ Todo.belongsTo(Project, {
 });
 
 // * Student - Course *
-// Student.hasMany(Course);
-
-// Course.belongsToMany(Student, {
-//   through: 'student_course',
-// });
-
-// - - - - - - -
-
-// Student.hasMany(Course, {
-//   foreignKey: 'student_id',
-//   as: 'courses', // this determines the name in `associations`!
-// });
-
-// Course.belongsToMany(Student, {
-//   through: 'student_course',
-//   foreignKey: 'course_id',
-// });
 
 Student.belongsToMany(Course, {
   through: 'student_course',
-  // as: 'courses',
   foreignKey: 'student_id'
 });
 
