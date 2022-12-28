@@ -1,5 +1,5 @@
-const URI_AUTH = 'http://localhost:3000/api/users/auth';
-const URI_LOGIN = 'http://localhost:3000/api/users/login';
+const URI_AUTH = 'http://localhost:4000/api/users/auth';
+const URI_LOGIN = 'http://localhost:4000/api/users/login';
 
 let body, container, submitBtn, loadingCover;
 let credentials = {};

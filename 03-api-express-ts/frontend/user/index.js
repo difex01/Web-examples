@@ -1,4 +1,4 @@
-const URI = 'http://localhost:3000/api/users/current';
+const URI = 'http://localhost:4000/api/users/current';
 
 let body, layout, loadingCover, header, postModal, homePage, openCreator,
 closeCreator, postField, userPreviewName, userPreviewEmail;
