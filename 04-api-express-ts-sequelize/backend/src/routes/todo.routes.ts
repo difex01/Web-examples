@@ -8,4 +8,5 @@ const { todoController } = controllers;
 todoRoutes.get('/', todoController.getTodos);
 todoRoutes.get('/:id', todoController.getTodo);
 todoRoutes.post('/', todoController.createTodo);
+
 export default todoRoutes;

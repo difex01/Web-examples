@@ -23,7 +23,7 @@ const projectsController = {
       });
     }
   },
-  getProject: async (req: Request, res: Response) => {
+  getProjecById: async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
 
@@ -49,6 +49,14 @@ const projectsController = {
     try {
       const { id } = req.params;
 
+      const project = await Project.findByPk(id);
+
+      if (!project) {
+        return res.status(404).json({
+          message: 'Project not found',
+        });
+      }
+
       const todos = await Todo.findAll({
         where: {
           project_id: id,
@@ -62,7 +70,7 @@ const projectsController = {
 
       if (!todos) {
         return res.status(404).json({
-          message: 'Todos not found',
+          message: 'Project does not have todos',
         });
       }
 

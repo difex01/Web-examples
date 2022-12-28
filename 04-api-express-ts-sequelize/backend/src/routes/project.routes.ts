@@ -6,7 +6,7 @@ const projectsRoutes = Router();
 const { projectsController } = controllers;
 
 projectsRoutes.get('/', projectsController.getProjects);
-projectsRoutes.get('/:id', projectsController.getProject);
+projectsRoutes.get('/:id', projectsController.getProjecById);
 projectsRoutes.post('/', projectsController.createProject);
 projectsRoutes.get('/todos/:id', projectsController.getProjectTodos);
 

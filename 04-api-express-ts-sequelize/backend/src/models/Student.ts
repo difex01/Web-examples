@@ -1,10 +1,22 @@
-import { DataTypes, Model, CreationOptional, InferCreationAttributes } from "sequelize";
+import { DataTypes, Model, CreationOptional, InferCreationAttributes, BelongsToManyGetAssociationsMixin, BelongsToManyAddAssociationMixin, BelongsToManyCreateAssociationMixin } from "sequelize";
 import { sequelize } from '../database/connection';
+import { Course } from "./Course";
 
 export class Student extends Model<InferCreationAttributes<Student>> {
   declare student_id: CreationOptional<number>;
   declare name: string;
-  declare age: string;
+  declare age: number;
+  declare grade_id: CreationOptional<number>;
+
+  declare getCourses: BelongsToManyGetAssociationsMixin<Course>;
+  declare addCourse: BelongsToManyAddAssociationMixin<Course, number>;
+  declare createCourse: BelongsToManyCreateAssociationMixin<Course>;
+
+  // declare readonly courses?: Course[];
+
+  // declare static associtations: {
+  //   courses: Association<Student, Course>;
+  // };
 }
 
 Student.init({
@@ -18,7 +30,11 @@ Student.init({
   },
   age: {
     type: DataTypes.INTEGER,
+  },
+  grade_id: {
+    type: DataTypes.INTEGER,
   }
 }, {
   sequelize
 });
+

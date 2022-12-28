@@ -1,7 +1,8 @@
 import { Project } from "./Project";
 import { Todo } from "./Todo";
 import { Student } from "./Student";
-import { Class } from "./Class";
+import { Course } from "./Course";
+import { Grade } from "./Grade";
 
 // * Project - Todo *
 
@@ -15,11 +16,45 @@ Todo.belongsTo(Project, {
   targetKey: 'project_id', // field from Project
 });
 
-// * Student - Class *
-Student.belongsToMany(Class, {
-  through: 'Enrollment',
+// * Student - Course *
+// Student.hasMany(Course);
+
+// Course.belongsToMany(Student, {
+//   through: 'student_course',
+// });
+
+// - - - - - - -
+
+// Student.hasMany(Course, {
+//   foreignKey: 'student_id',
+//   as: 'courses', // this determines the name in `associations`!
+// });
+
+// Course.belongsToMany(Student, {
+//   through: 'student_course',
+//   foreignKey: 'course_id',
+// });
+
+Student.belongsToMany(Course, {
+  through: 'student_course',
+  // as: 'courses',
+  foreignKey: 'student_id'
 });
 
-Class.belongsToMany(Student, {
-  through: 'Enrollment',
+Course.belongsToMany(Student, {
+  through: 'student_course',
+  as: 'students',
+  foreignKey: 'course_id',
+});
+
+// * Student - Grade *
+
+Student.belongsTo(Grade, {
+  foreignKey: 'grade_id',
+  targetKey: 'grade_id',
+});
+
+Grade.hasMany(Student, {
+  foreignKey: 'grade_id',
+  sourceKey: 'grade_id',
 });
