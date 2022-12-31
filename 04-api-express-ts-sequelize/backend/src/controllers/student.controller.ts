@@ -130,9 +130,14 @@ const createStudentWithCoursesNames = async (req: Request, res: Response) => {
       age
     });
 
-    coursesToAdd.forEach(async(course) => await newStudent.addCourse(course));
+    for (const course of coursesToAdd) {
+      await newStudent.addCourse(course);
+    }
 
-    coursesNotFound.forEach(async(name) => await newStudent.createCourse({name}));
+    for (const courseName of coursesNotFound) {
+      const newCourse = await newStudent.createCourse({ name: courseName });
+      coursesToAdd.push(newCourse);
+    }
 
     res.status(200).json({
       newStudent,
