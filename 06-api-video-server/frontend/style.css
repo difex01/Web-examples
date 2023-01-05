@@ -1,0 +1,47 @@
+#my-player {
+  width: 640px;
+  height: 480px;
+  background-color: #ccc;
+  position: relative;
+}
+
+#my-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#play-pause {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#volume {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%
+}
