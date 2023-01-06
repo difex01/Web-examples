@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: initial;
+}
+
+input {
+  padding: 10px 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  border: none;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+}
+
+.todos button {
+  margin-bottom: 10px;
+}
+
+.todos button.completed {
+  background-color: #64e785;
+  color: #22502d;
+  font-weight: bold;
+}
