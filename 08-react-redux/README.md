@@ -16,7 +16,8 @@ Para trabajar con react
 
 `npm i -S react-redux`
 
-Esta última librería nos servirá para utilizar el componente `Provider` el cual se encargará de compartir el estado en toda nuestra aplicación.
+Esta última librería proporciona una manera de conectar componentes de React con el estado de la aplicación gestionado por **Redux**.
+Permite a los componentes de *React* acceder al estado de la aplicación de manera sencilla y sin tener que pasar propiedades a través de varios componentes anidados manualmente. También proporciona una forma de enviar acciones y actualizar el estado de la aplicación desde componentes de *React*.
 
 ## 3. Conceptos básicos
 

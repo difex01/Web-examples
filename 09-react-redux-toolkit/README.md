@@ -1,4 +1,4 @@
-# REDUX
+# REDUX con REDUX-TOOLKIT
 
 ## 1. Introducción
 
@@ -6,111 +6,23 @@
 
 Una de las principales ventajas de **Redux** es que proporciona un lugar centralizado para almacenar el estado de la aplicación y un conjunto de reglas claras para actualizar ese estado. Esto hace que sea más fácil de entender cómo funciona la aplicación y cómo se actualiza el estado.
 
+**Redux Toolkit** es una biblioteca que se ha diseñado para hacer más fácil y más rápido trabajar con **Redux**.
+Proporciona una serie de funcionalidades que facilitan la configuración y uso de **Redux**, incluyendo la creación de **actions** y **reducers** de manera más concisa, la configuración y utilización de middlewares de manera más sencilla, y la facilidad de trabajar con datos asíncronos. 
+
 ## 2. Instalación
 
-Para instalar la versión estable:
+Para instalar redux-toolkit:
 
-`npm i -S redux`
+`npm install @reduxjs/toolkit`
 
 Para trabajar con react
 
 `npm i -S react-redux`
 
-Esta última librería nos servirá para utilizar el componente `Provider` el cual se encargará de compartir el estado en toda nuestra aplicación.
+Esta última librería proporciona una manera de conectar componentes de React con el estado de la aplicación gestionado por **Redux**.
+Permite a los componentes de *React* acceder al estado de la aplicación de manera sencilla y sin tener que pasar propiedades a través de varios componentes anidados manualmente. También proporciona una forma de enviar acciones y actualizar el estado de la aplicación desde componentes de *React*.
 
 ## 3. Conceptos básicos
-
-### 3.1. State
-
-El estado de nuestra aplicación puede ser visto como un simple objeto.
-Por ejemplo, este sería el estado de una aplicación to-do.
-
-```js
-{
-  todos: [
-    {
-    title: 'Hacer la tarea',
-    completed: true,
-    },
-    {
-    title: 'Ir al super',
-    completed: false,
-    }
-  ],
-  loading: false
-}
-```
-
-### 3.2. Actions
-
-Para actualizar el estado, es necesario enviar un **action**.
-Un **action** es un simple objeto que describe la acción a realizar.
-
-```js
-{ type: 'ADD_TODO', title: 'Hacer ejercicio' }
-{ type: 'TOGGLE_TODO', index: 1 }
-{ type: 'SET_LOADING', value: true }
-```
-
-### 3.3. Reducers
-
-Un **reducer** es una función que toma el **state** y el **action** como argumentos y devuelve el siguiente estado de la aplicación.
-Esta debe ser una función pura, que no modifique el estado y en su lugar devuelva un nuevo objeto como estado.
-
-En este ejemplo, separamos los reducers por cada recurso al que se quiera acceder de nuestro estado. Uno para **todo** y otro para **loading**.
-
-```js
-const loadingInitialState = false
-
-function loadingReducer(state = loadingInitialState, action) {
-  if (action.type === 'SET_LOADING') {
-    // Devolvemos un nuevo estado
-    return action.value;
-  } else {
-    // Devolvemos el estado actual
-    return state;
-  }
-}
-
-const todosInitialState = [];
-
-function todosReducer(state = todoInitialState, action) {
-  switch(action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          title: actio.title
-        }
-      ]
-    case 'TOGGLE_TODO':
-      return state.map((todo, index) => action.index === index ?
-        { text: todo.text, completed: !todo.completed } :
-        todo
-      )
-    default:
-      return state;
-  }
-}
-```
-
-Como podemos observar en el ejemplo anterior, cada **reducer** devuelve la parte del estado que le corresponde.
-
-Finalmente creamos otro **reducer** donde uniremos los demás **reducers**.
-
-```js
-const initialState = {
-  todos: [],
-  loading: false
-}
-
-function reducer(state = initialState, action) {
-  return {
-    todos: todosReducer(state.todos, action),
-    loading: loadingReducer(state.loading, action),
-  }
-}
-```
 
 ## 4. Los 3 principios de REDUX
 
