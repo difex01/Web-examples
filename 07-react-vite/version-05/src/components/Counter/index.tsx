@@ -15,10 +15,7 @@ function Counter(props: CounterProps) {
   let abc = 1;
 
   const increment = (n: number = 1) => {
-    //setCounter(counter + n)
-    console.log('increment', abc)
-    abc += 1;
-    console.log('increment>', abc)
+    setCounter(counter + n)
   }
 
   const decrement = (n: number = 1) => {
