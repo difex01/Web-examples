@@ -1,0 +1,18 @@
+.form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form label {
+  text-align: left;
+  margin: 5px 0;
+}
+
+button {
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  background-color: #837cc4;
+  color: #ffffff;
+}

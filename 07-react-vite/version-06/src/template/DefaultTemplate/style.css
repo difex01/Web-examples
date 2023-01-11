@@ -1,0 +1,14 @@
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #6f6c70;
+  padding: 15px;
+}
+
+footer {
+  background-color: #6f6c70;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
