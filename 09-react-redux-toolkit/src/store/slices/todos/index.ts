@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import reducers, { todosStateI } from './reducers';
+import { extraReducers } from './extraReducers';
 
 export const todosSlice = createSlice({
   name: 'todos',
@@ -7,6 +8,7 @@ export const todosSlice = createSlice({
     list: []
   },
   reducers,
+  extraReducers,
 });
 
 export const { addTodo, toggleTodo } = todosSlice.actions;

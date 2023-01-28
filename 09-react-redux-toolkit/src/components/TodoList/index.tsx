@@ -1,13 +1,15 @@
-import { FormEvent, MouseEvent, useState } from "react";
+import { FormEvent, MouseEvent, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { StateI } from "../../store/slices";
 import { addTodo, toggleTodo } from "../../store/slices/todos";
 import { todosListItemI } from "../../store/slices/todos/reducers";
 import './style.css';
+import { getTodosData } from "../../store/slices/todos/extraReducers";
+import { AppDispatch } from "../../store";
 
 function TodoList() {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const todos = useSelector<StateI>(state => state.todos.list) as todosListItemI[];
 
@@ -27,6 +29,10 @@ function TodoList() {
   const handleToggle = (idx: number) => {
     dispatch(toggleTodo(idx));
   }
+
+  useEffect(() => {
+    dispatch(getTodosData(1));
+  }, [])
 
   return (
     <div>
